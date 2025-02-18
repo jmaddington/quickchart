@@ -142,6 +142,7 @@ This self-hosted QuickChart implementation currently supports the `/chart`, `/qr
 
 **Note:** This release adds `/chart/create/` and `/chart/render/` functionality. For data storage, sqlite db is used.
 It supports functionality as described [here](https://quickchart.io/documentation/usage/short-urls-and-templates/#short-urls) and [here](https://quickchart.io/documentation/usage/short-urls-and-templates/#templates)
+
 Example body for `/chart/create/`:
 
 ```json
@@ -176,6 +177,11 @@ Example body for `/chart/create/`:
 The **neverExpire** parameter allows you to control the expiration time of the saved chart. 
 If **"neverExpire": true**, then the chart has no storage time restrictions, otherwise, if this parameter is not specified or is false, then the expiraton time will be set to 6 months.
 
+To run it with docker:
+```shell
+docker build -t quickchart .   
+docker run -p 3400:3400  -v /path/to/db/folder/:/var/lib/db/ quickchart
+```
 ## License
 
 QuickChart is open source, licensed under version 3 of the GNU AGPL.  If you would like to modify this project for commercial purposes (and not release the source code), please [contact me](https://www.ianww.com/).
