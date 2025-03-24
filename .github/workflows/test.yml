@@ -37,7 +37,7 @@ jobs:
         
       - name: Set up database directory
         run: |
-          mkdir -p /var/lib/db
+          sudo mkdir -p /var/lib/db
           sudo chmod 777 /var/lib/db
         
       - name: Run basic tests only
