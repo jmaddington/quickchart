@@ -1,7 +1,7 @@
 FROM node:18-alpine3.17
 
-ENV NODE_ENV production
-
+ENV NODE_ENV test
+ENV NODE_OPTIONS --experimental-global-webcrypto
 WORKDIR /quickchart
 
 RUN apk add --upgrade apk-tools
@@ -13,10 +13,11 @@ RUN apk add --no-cache libimagequant-dev
 RUN apk add --no-cache vips-dev
 RUN apk add --no-cache --virtual .runtime-deps graphviz
 RUN apk add --no-cache sqlite
+RUN npm install -g mocha
 
 COPY package*.json .
 COPY yarn.lock .
-RUN yarn install --production
+RUN yarn install --development
 
 RUN apk update
 RUN rm -rf /var/cache/apk/* && \
@@ -25,8 +26,9 @@ RUN apk del .build-deps
 
 COPY *.js ./
 COPY lib/*.js lib/
+COPY test/ test/
 COPY LICENSE .
+EXPOSE 3401
 VOLUME /var/lib/db/
-EXPOSE 3400
+ENTRYPOINT ["npm"   , "run", "test"]
 
-ENTRYPOINT ["node", "--max-http-header-size=65536", "--experimental-global-webcrypto", "index.js"]
