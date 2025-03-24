@@ -17,11 +17,15 @@
   },
   "overrides": {
     "canvas": "2.9.3",
-    "json-schema": "^0.4.0"
+    "json-schema": "^0.4.0",
+    "flat": "^5.0.1",
+    "crypto-js": "^4.2.0"
   },
   "resolutions": {
     "canvas": "2.9.3",
-    "json-schema": "^0.4.0"
+    "json-schema": "^0.4.0",
+    "flat": "^5.0.1",
+    "crypto-js": "^4.2.0"
   },
   "dependencies": {
     "bunyan": "^1.8.12",
