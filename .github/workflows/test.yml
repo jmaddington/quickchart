@@ -43,7 +43,7 @@ jobs:
       - name: Run basic tests only
         run: |
           # Skip the chart-create.test.js tests that require database access
-          PORT=3400 NODE_ENV=test mocha --exit --recursive test/ci/charts.js test/ci/graphviz.js test/ci/google_image_charts.js test/ci/qr.js
+          PORT=3400 NODE_ENV=test npx mocha --exit --recursive test/ci/charts.js test/ci/graphviz.js test/ci/google_image_charts.js test/ci/qr.js
         env:
           NODE_ENV: test
           PORT: 3400
