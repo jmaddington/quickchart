@@ -16,10 +16,30 @@
     "test:watch": "PORT=2998 NODE_ENV=test chokidar '**/*.js' --initial --ignore node_modules -c 'mocha --exit --recursive test/'"
   },
   "overrides": {
-    "canvas": "2.9.3"
+    "canvas": "2.9.3",
+    "json-schema": "^0.4.0",
+    "flat": "^5.0.1",
+    "crypto-js": "^4.2.0",
+    "cross-spawn": "^6.0.6",
+    "axios": "^1.8.2",
+    "minimatch": "^3.0.5",
+    "ws": "^7.5.10",
+    "nth-check": "^2.0.1",
+    "body-parser": "^1.20.3",
+    "path-to-regexp": "^0.1.12"
   },
   "resolutions": {
-    "canvas": "2.9.3"
+    "canvas": "2.9.3",
+    "json-schema": "^0.4.0",
+    "flat": "^5.0.1",
+    "crypto-js": "^4.2.0",
+    "cross-spawn": "^6.0.6",
+    "axios": "^1.8.2",
+    "minimatch": "^3.0.5",
+    "ws": "^7.5.10",
+    "nth-check": "^2.0.1",
+    "body-parser": "^1.20.3",
+    "path-to-regexp": "^0.1.12"
   },
   "dependencies": {
     "bunyan": "^1.8.12",
