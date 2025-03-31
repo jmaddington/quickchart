@@ -88,6 +88,18 @@ function utf8ToAscii(str) {
     .join('');
 }
 
+function escapeHtml(str) {
+  if (typeof str !== 'string') {
+    return '';
+  }
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function sanitizeErrorHeader(msg) {
   if (typeof msg === 'string') {
     return utf8ToAscii(msg).replace(/\r?\n|\r/g, '');
@@ -122,7 +134,7 @@ function failSvg(res, msg, statusCode = 500) {
   </style>
   <foreignObject width="240" height="80"
    requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <p xmlns="http://www.w3.org/1999/xhtml">${msg}</p>
+    <p xmlns="http://www.w3.org/1999/xhtml">${escapeHtml(msg)}</p>
   </foreignObject>
 </svg>`);
 }
