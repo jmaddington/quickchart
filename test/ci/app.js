@@ -1,5 +1,8 @@
 /* eslint-env node, mocha */
 
+// Load the secure wrapper for the request module
+require('./setup');
+
 const assert = require('assert');
 const crypto = require('crypto');
 
