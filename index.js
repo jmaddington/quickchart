@@ -365,7 +365,7 @@ app.get('/chart', (req, res) => {
     renderChartToPng(req, res, opts);
   } else {
     logger.error(`Request for unsupported format ${outputFormat}`);
-    res.status(500).end(`Unsupported format ${outputFormat}`);
+    res.status(500).end(`Unsupported format ${escapeHtml(outputFormat)}`);
   }
 
   telemetry.count('chartCount');
