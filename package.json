@@ -26,7 +26,8 @@
     "ws": "^7.5.10",
     "nth-check": "^2.0.1",
     "body-parser": "^1.20.3",
-    "path-to-regexp": "^0.1.12"
+    "path-to-regexp": "^0.1.12",
+    "tar-fs": "^2.1.2"
   },
   "resolutions": {
     "canvas": "2.9.3",
@@ -39,7 +40,8 @@
     "ws": "^7.5.10",
     "nth-check": "^2.0.1",
     "body-parser": "^1.20.3",
-    "path-to-regexp": "^0.1.12"
+    "path-to-regexp": "^0.1.12",
+    "tar-fs": "^2.1.2"
   },
   "dependencies": {
     "bunyan": "^1.8.12",
